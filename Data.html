@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+
+    <link rel="stylesheet" href="Data.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ================= TOP BAR ================= -->
+    <header class="head">
+        <h1>Product Dashboard</h1>
+        <p>Manage your products easily</p>
+    </header>
+
+    <!-- ================= STATS CARDS ================= -->
+    <section class="stats">
+
+        <div class="card">
+            <h3>Total Products</h3>
+            <span id="totalProducts">0</span>
+        </div>
+
+        <div class="card">
+            <h3>Total Value</h3>
+            <span id="totalValue">0</span>
+        </div>
+
+    </section>
+
+    <!-- ================= FORM ================= -->
+    <section class="form">
+
+        <input type="text" placeholder="Product Title" id="title">
+
+        <div class="price">
+            <input onkeyup="getTotal()" type="number" placeholder="Price" id="price">
+            <input onkeyup="getTotal()" type="number" placeholder="Taxes" id="taxes">
+            <input onkeyup="getTotal()" type="number" placeholder="Ads" id="ads">
+            <input onkeyup="getTotal()" type="number" placeholder="Discount" id="disc">
+
+            <div class="total-box">
+                Total: <span id="total">0</span>
+            </div>
+        </div>
+
+        <input type="number" placeholder="Count" id="count">
+        <input type="text" placeholder="Category" id="category">
+
+        <button id="submit">Create Product</button>
+
+    </section>
+
+    <!-- ================= SEARCH ================= -->
+    <section class="search">
+
+        <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="Search products...">
+
+        <div class="search-buttons">
+            <button onclick="getSearchMood(this.id)" id="searchTitle">By Title</button>
+            <button onclick="getSearchMood(this.id)" id="searchCategory">By Category</button>
+        </div>
+
+    </section>
+
+    <!-- ================= ACTIONS ================= -->
+    <div id="deleteAll"></div>
+
+    <!-- ================= TABLE ================= -->
+    <section class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Taxes</th>
+                    <th>Ads</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody id="tbody"></tbody>
+
+        </table>
+
+    </section>
+
+</div>
+
+<script src="Data.js"></script>
+
+</body>
+</html>
